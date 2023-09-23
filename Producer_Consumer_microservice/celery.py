@@ -12,9 +12,9 @@ app = Celery('Producer_Consumer_microservice', broker=CELERY_BROKER_URL)
 app.config_from_object('django.conf:settings', namespace='CELERY')
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 
-# app.conf.beat_schedule = {
-#     'task1': {
-#         'task': 'order.tasks.',
-#         'schedule': crontab(minute='*/10'),
-#     }
-# }
+app.conf.beat_schedule = {
+    'order_creation': {
+        'task': 'order.tasks.order_creation',
+        'schedule': crontab(minute='*/1'),
+    }
+}
