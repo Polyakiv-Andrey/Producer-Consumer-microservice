@@ -16,9 +16,10 @@ def order_creation():
     else:
         new_task_id = last_task.task_id + 1
     employees = Employee.objects.all()
-    random_employee = random.choice(employees)
-    Order.objects.create(
-        name=f"Task-{new_task_id}",
-        description=f"Description for task-{new_task_id}",
-        employee=random_employee
-    )
+    if employees:
+        random_employee = random.choice(employees)
+        Order.objects.create(
+            name=f"Task-{new_task_id}",
+            description=f"Description for task-{new_task_id}",
+            employee=random_employee
+        )
