@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 >Order list</h1>
+{% if messages %}
+<div>
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+<table class="table" >
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Employee</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for order in orders %}
+        <tr>
+            <td>{{ order.name }}</td>
+            <td>{{ order.description }}</td>
+            <td>{{ order.employee }}</td>
+            <td><a href="{% url 'order:order-delete' order.task_id %}"><i class="fas fa-trash"></i></a></td>
+        </tr>
+    {% empty %}
+        <p>List is empty</p>
+    {% endfor %}
+
+</table>
+
+
+
+<style>
+
+  table {
+    border-collapse: collapse;
+    width: 80%;
+    border: 1px solid #ccc;
+      text-align: center;
+  }
+
+  th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+
+  th {
+    background-color: #f2f2f2;
+      text-align: center;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tr:hover {
+    background-color: #ddd;
+  }
+
+  h1 {
+        text-align: center;
+    }
+</style>
+{% endblock %}
+
+
+
+
+
+
+
