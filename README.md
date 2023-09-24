@@ -1,8 +1,8 @@
 # Producer-Consumer-microservice
 
 ## Screens
-![Screenshot 2023-09-25 at 00.03.07.png](..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2Frd%2Fswqwf1q94z11v7m4j9vjcqy00000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_acErJo%2FScreenshot%202023-09-25%20at%2000.03.07.png)
-![Screenshot 2023-09-25 at 00.13.18.png](..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2Frd%2Fswqwf1q94z11v7m4j9vjcqy00000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_9ed2r1%2FScreenshot%202023-09-25%20at%2000.13.18.png)
+![Screenshot 2023-09-25 at 00.32.23.png](README_images%2FScreenshot%202023-09-25%20at%2000.32.23.png)
+![Screenshot 2023-09-25 at 00.31.13.png](README_images%2FScreenshot%202023-09-25%20at%2000.31.13.png)
 
 ## Fetches
 * Creation of "Order" and "Employee" models for order and employee management.
