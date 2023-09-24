@@ -7,7 +7,9 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views import generic, View
 
+from Producer_Consumer_microservice.settings import BOT_TOKEN
 from order.models import Order
+from order.tasks import send_telegram_message
 
 Employee = get_user_model()
 
@@ -40,4 +42,7 @@ class DeleteOrderView(generic.DeleteView):
         )
         self.object.delete()
         messages.success(self.request, message)
+        chat_id = self.request.COOKIES.get('chat_id')
+        if chat_id and BOT_TOKEN:
+            send_telegram_message.delay(chat_id, message)
         return redirect('order:order-list')
